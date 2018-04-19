@@ -1,4 +1,4 @@
-![BUILD Token](logo.png "BUILD Token")
+![BUILD Token](logo.jpg "BUILD Token")
 
 # BUILD Token smart contract
 
@@ -55,8 +55,8 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ## Main network configuration
 
-* _Bounty tokens wallet_        :
-* _Advisors tokens wallet_      : 
+* _Bounty tokens wallet_        : 0x3180e7B6E726B23B1d18D9963bDe3264f5107aef
+* _Advisors tokens wallet_      : 0x36A8b67fe7800Cd169Fd46Cd75824DC016a54d13
 * _Founders tokens wallet_      : 
 * _Company tokens wallet_       : 
 * _Contracts manager_           :
@@ -79,7 +79,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Hardcap_                     : 12 000 ETH
 * _Period_                      : 30 days
 * _Start_                       : 
-* _Wallet_                      : 
+* _Wallet_                      : 0xB53E3f252fBCD041e46Aad82CFaEe326E04d1396
 
 ##### Milestones
 1. 10 days, bonus +20%
@@ -91,7 +91,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Base price_                  : 1 ETH = 5000 Tokens
 * _Hardcap_                     : 23 000 ETH
 * _Start_                       : 
-* _Wallet_                      : 
+* _Wallet_                      : 0x8f1C4E049907Fa4329dAC9c504f4013620Fa39c9
 
 ##### Milestones
 1. 10 days, bonus +25%

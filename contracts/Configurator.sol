@@ -26,7 +26,7 @@ contract Configurator is Ownable {
     commonConfigure(preITO);
     commonConfigure(ito);
 
-    preITO.setWallet(0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770);
+    preITO.setWallet(0xB53E3f252fBCD041e46Aad82CFaEe326E04d1396);
     preITO.setStart(1524441600);
     preITO.setPeriod(30);
     preITO.setPrice(6650000000000000000000);
@@ -35,7 +35,7 @@ contract Configurator is Ownable {
 
     token.setSaleAgent(preITO);
 
-    ito.setWallet(0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770);
+    ito.setWallet(0x8f1C4E049907Fa4329dAC9c504f4013620Fa39c9);
     ito.setStart(1527206400);
     ito.setHardcap(23000000000000000000000);
     ito.setPrice(5000000000000000000000);
@@ -46,8 +46,8 @@ contract Configurator is Ownable {
     ito.addMilestone(15, 10);
     ito.addMilestone(5, 0);
 
-    ito.addWallet(0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770, 2);
-    ito.addWallet(0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770, 3);
+    ito.addWallet(0x3180e7B6E726B23B1d18D9963bDe3264f5107aef, 2);
+    ito.addWallet(0x36A8b67fe7800Cd169Fd46Cd75824DC016a54d13, 3);
     ito.addWallet(0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770, 11);
     ito.addWallet(0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770, 4);
 
