@@ -15,9 +15,16 @@ contract MintableToken is AddressesFilterFeature, StandardToken {
 
   mapping (address => uint) public initialBalances;
 
+  mapping (address => uint) public lockedAddresses;
+
   modifier notLocked(address _from, uint _value) {
-    require(msg.sender == owner || msg.sender == saleAgent || allowedAddresses[_from] || mintingFinished);
+    require(msg.sender == owner || msg.sender == saleAgent || allowedAddresses[_from] || (mintingFinished && now > lockedAddresses[_from]));
     _;
+  }
+
+  function lock(address _from, uint lockDays) public {
+    require(msg.sender == saleAgent || msg.sender == owner);
+    lockedAddresses[_from] = now + 1 days * lockDays;
   }
 
   function setSaleAgent(address newSaleAgnet) public {

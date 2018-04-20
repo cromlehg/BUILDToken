@@ -47,7 +47,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ## Tokens distribution
 
-* _Bounty tokens percent_       : 2%
+* _Bounty tokens percent_       : 2% - locked untill 30 days after ITO
 * _Advisors tokens percent_     : 3%
 * _Founders tokens percent_     : 11%
 * _Company tokens percent_      : 4%
@@ -58,7 +58,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Bounty tokens wallet_        : 0x3180e7B6E726B23B1d18D9963bDe3264f5107aef
 * _Advisors tokens wallet_      : 0x36A8b67fe7800Cd169Fd46Cd75824DC016a54d13
 * _Founders tokens wallet_      : 
-* _Company tokens wallet_       : 
+* _Company tokens wallet_       : 0x7D648BcAbf05CEf119C9a11b8E05756a41Bd29Ad
 * _Contracts manager_           :
 
 ### Links
@@ -77,14 +77,9 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Base price_                  : 1 ETH = 6650 Tokens
 * _Softcap_                     : 3500 ETH
 * _Hardcap_                     : 12 000 ETH
-* _Period_                      : 30 days
+* _Period_                      : 42 days
 * _Start_                       : 
 * _Wallet_                      : 0xB53E3f252fBCD041e46Aad82CFaEe326E04d1396
-
-##### Milestones
-1. 10 days, bonus +20%
-2. 10 days, bonus +15%
-3. 10 days, bonus +10%
 
 #### ITO
 * _Minimal insvested limit_     : 0.1 ETH
@@ -94,9 +89,10 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Wallet_                      : 0x8f1C4E049907Fa4329dAC9c504f4013620Fa39c9
 
 ##### Milestones
-1. 10 days, bonus +25%
+1. 15 days, bonus +25%
 2. 15 days, bonus +20%
 3. 15 days, bonus +15%
-3. 15 days, bonus +10%
-3.  5 days, without bonuses
+4. 15 days, bonus +10%
+5. 15 days, bonus +5%
+6. 15 days, without bonuses
 
