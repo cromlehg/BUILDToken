@@ -6,19 +6,19 @@ import standard from './token/standard';
 
 const token = artifacts.require('Token.sol');
 
-contract('WorldopolysToken - BasicToken test', function (accounts) {
+contract('BUILDToken - BasicToken test', function (accounts) {
   basic(token, accounts);
 });
-contract('WorldopolysToken - StandardToken test', function (accounts) {
+contract('BUILDToken - StandardToken test', function (accounts) {
   standard(token, accounts);
 });
-contract('WorldopolysToken - Mintable test', function (accounts) {
+contract('BUILDToken - Mintable test', function (accounts) {
   mintable(token, accounts);
 });
-contract('WorldopolysToken - Ownable test', function (accounts) {
+contract('BUILDToken - Ownable test', function (accounts) {
   ownable(token, accounts);
 });
 
-contract('WorldopolysToken - Additional conditions test', function (accounts) {
+contract('BUILDToken - Additional conditions test', function (accounts) {
   additional(token, accounts);
 });
