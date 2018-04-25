@@ -35,4 +35,10 @@ contract PreITO is SoftcapFeature, NextSaleAgentFeature, AssembledCommonSale {
     }
   }
 
+  function fallback() internal minInvestLimited(msg.value) returns(uint) {
+    require(now >= start && now < endSaleDate());
+    updateInvested(msg.value);
+    return mintTokensByETH(msg.sender, msg.value);
+  }
+
 }
