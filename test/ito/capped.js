@@ -40,6 +40,7 @@ export default function (Token, Crowdsale, wallets) {
     await crowdsale.addWallet(this.FoundersTokensWallet, this.FoundersTokensPercent);
     await crowdsale.addWallet(this.CompanyTokensWallet, this.CompanyTokensPercent);
     await crowdsale.setPercentRate(this.PercentRate);
+    await crowdsale.lockAddress(this.BountyTokensWallet, 30);
   });
 
   it('should accept payments within hardcap', async function () {

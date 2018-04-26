@@ -93,7 +93,7 @@ contract('Configurator integration test', function (accounts) {
     itoWallet.should.bignumber.equal('0x8f1C4E049907Fa4329dAC9c504f4013620Fa39c9');
   });
 
-  it ('bounty team wallet, marketing wallet and reserved wallet should be as described in README', async function () {
+  it ('bounty, advisors, founders, company wallets should be as described in README', async function () {
     const bountyWallet = await ito.wallets(0);
     bountyWallet.should.bignumber.equal('0x3180e7B6E726B23B1d18D9963bDe3264f5107aef');
     const advisorsWallet = await ito.wallets(1);

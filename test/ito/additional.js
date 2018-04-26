@@ -35,11 +35,12 @@ export default function (Token, Crowdsale, wallets) {
     await crowdsale.addMilestone(15, 5);
     await crowdsale.addMilestone(15, 0);
     await crowdsale.setWallet(this.wallet);
-    await crowdsale.addWallet(this.BountyTokensWallet, this.BountyTokensPercent);
+    await crowdsale.addWallet(wallets[9], this.BountyTokensPercent);
     await crowdsale.addWallet(this.AdvisorsTokensWallet, this.AdvisorsTokensPercent);
     await crowdsale.addWallet(this.FoundersTokensWallet, this.FoundersTokensPercent);
     await crowdsale.addWallet(this.CompanyTokensWallet, this.CompanyTokensPercent);
     await crowdsale.setPercentRate(this.PercentRate);
+    await crowdsale.lockAddress(wallets[9], 30);
   });
 
   it('should mintTokensByETHExternal by owner', async function () {
@@ -64,7 +65,7 @@ export default function (Token, Crowdsale, wallets) {
     balance.should.bignumber.equal(tokens(100));
   });
 
-   it('should mintTokensExternal by Direct Mint Agent', async function () {
+  it('should mintTokensExternal by Direct Mint Agent', async function () {
     const owner = await crowdsale.owner();
     await crowdsale.setDirectMintAgent(wallets[3], {from: owner});
     await crowdsale.mintTokensExternal(wallets[6], tokens(100), {from: wallets[3]}).should.be.fulfilled;
@@ -79,6 +80,28 @@ export default function (Token, Crowdsale, wallets) {
     await crowdsale.sendTransaction({value: investment, from: wallets[1]});
     const post = web3.eth.getBalance(this.wallet);
     post.minus(pre).should.bignumber.equal(investment);
+  });
+
+  it('should lock bounty wallet address after finish', async function () {
+    const owner = await crowdsale.owner();
+    const investment = ether(10);
+    await crowdsale.sendTransaction({value: investment, from: wallets[1]});
+    await crowdsale.finish({from: owner});
+    await token.transfer(wallets[2], tokens(100), {from: wallets[1]}).should.be.fulfilled;
+    const balance = await token.balanceOf(wallets[9]);
+    balance.should.bignumber.greaterThan(tokens(100));
+    await token.transfer(wallets[3], tokens(100), {from: wallets[9]}).should.be.rejectedWith(EVMRevert);
+  });
+
+  it('should unlock bounty wallet address after 30 days', async function () {
+    const owner = await crowdsale.owner();
+    const investment = ether(10);
+    await crowdsale.sendTransaction({value: investment, from: wallets[1]});
+    await crowdsale.finish({from: owner});
+    await increaseTimeTo(latestTime() + duration.days(31));
+    await token.transfer(wallets[3], tokens(100), {from: wallets[9]}).should.be.fulfilled;
+    const balance = await token.balanceOf(wallets[3]);
+    balance.should.bignumber.equal(tokens(100));
   });
  
 }

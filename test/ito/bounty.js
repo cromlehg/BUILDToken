@@ -40,9 +40,10 @@ export default function (Token, Crowdsale, wallets) {
     await crowdsale.addWallet(wallets[5], this.FoundersTokensPercent);
     await crowdsale.addWallet(wallets[6], this.CompanyTokensPercent);
     await crowdsale.setPercentRate(this.PercentRate);
+    await crowdsale.lockAddress(wallets[3], 30);
   });
 
-  it('should correctly calculate bonuses for team, marketing, resserved wallets', async function () {
+  it('should correctly calculate bonuses for bounty, advisors, founders, company wallets', async function () {
     await crowdsale.sendTransaction({value: ether(100), from: wallets[1]});
     await crowdsale.sendTransaction({value: ether(1), from: wallets[2]});
     const owner = await crowdsale.owner();

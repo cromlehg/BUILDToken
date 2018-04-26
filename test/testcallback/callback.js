@@ -45,6 +45,7 @@ export default function (Token, Crowdsale, CallbackTest, wallets) {
     await crowdsale.addWallet(this.FoundersTokensWallet, this.FoundersTokensPercent);
     await crowdsale.addWallet(this.CompanyTokensWallet, this.CompanyTokensPercent);
     await crowdsale.setPercentRate(this.PercentRate);
+    await crowdsale.lockAddress(this.BountyTokensWallet, 30);
   });
 
   it ('transfer should call tokenFallback for registered contract', async function () {
