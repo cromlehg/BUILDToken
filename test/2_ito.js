@@ -48,7 +48,7 @@ function config() {
   this.wallet = '0x8f1C4E049907Fa4329dAC9c504f4013620Fa39c9';
   this.BountyTokensWallet = '0x3180e7B6E726B23B1d18D9963bDe3264f5107aef';
   this.AdvisorsTokensWallet = '0x36A8b67fe7800Cd169Fd46Cd75824DC016a54d13';
-  this.FoundersTokensWallet = '0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770';
+  this.FoundersTokensWallet = '0xDf9CAAE51eED1F23B4ae9AeCDbdeb926252eFFC4';
   this.CompanyTokensWallet = '0x7D648BcAbf05CEf119C9a11b8E05756a41Bd29Ad';
   this.BountyTokensPercent = 2;
   this.AdvisorsTokensPercent = 3;

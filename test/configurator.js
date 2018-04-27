@@ -21,7 +21,7 @@ contract('Configurator integration test', function (accounts) {
   let preito;
   let ito;
 
-  const manager = '0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770';
+  const manager = '0x66C1833F667eAE8ea1890560e009F139A680F939';
 
   before(async function () {
     // Advance to the next block to correctly read time in the solidity "now" function interpreted by testrpc
@@ -99,7 +99,7 @@ contract('Configurator integration test', function (accounts) {
     const advisorsWallet = await ito.wallets(1);
     advisorsWallet.should.bignumber.equal('0x36A8b67fe7800Cd169Fd46Cd75824DC016a54d13');
     const foundersWallet = await ito.wallets(2);
-    foundersWallet.should.bignumber.equal('0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770');
+    foundersWallet.should.bignumber.equal('0xDf9CAAE51eED1F23B4ae9AeCDbdeb926252eFFC4');
     const companyWallet = await ito.wallets(3);
     companyWallet.should.bignumber.equal('0x7D648BcAbf05CEf119C9a11b8E05756a41Bd29Ad');
   });
