@@ -1,4 +1,4 @@
-![BUILD Token](logo.jpg "BUILD Token")
+![BUILD Token](logo.png "BUILD Token")
 
 # BUILD Token smart contract
 
