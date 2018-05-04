@@ -89,12 +89,11 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Wallet_                      : 0x8f1C4E049907Fa4329dAC9c504f4013620Fa39c9
 
 ##### Milestones
-1. 15 days, bonus +25%
+1. 10 days, bonus +25%
 2. 15 days, bonus +20%
 3. 15 days, bonus +15%
 4. 15 days, bonus +10%
-5. 15 days, bonus +5%
-6. 15 days, without bonuses
+5. 30 days, without bonuses
 
 
 ## Ropsten network configuration 

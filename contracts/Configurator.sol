@@ -40,12 +40,12 @@ contract Configurator is Ownable {
     ito.setHardcap(23000000000000000000000);
     ito.setPrice(5000000000000000000000);
 
-    ito.addMilestone(15, 25);
+    ito.addMilestone(10, 25);
     ito.addMilestone(15, 20);
     ito.addMilestone(15, 15);
     ito.addMilestone(15, 10);
-    ito.addMilestone(15, 5);
-    ito.addMilestone(15, 0);
+    ito.addMilestone(30, 0);
+
 
     ito.addWallet(0x3180e7B6E726B23B1d18D9963bDe3264f5107aef, 2);
     ito.addWallet(0x36A8b67fe7800Cd169Fd46Cd75824DC016a54d13, 3);
