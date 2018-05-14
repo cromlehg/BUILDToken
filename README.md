@@ -75,7 +75,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 #### PreITO
 * _Minimal insvested limit_     : 0.1 ETH
 * _Base price_                  : 1 ETH = 6650 Tokens
-* _Softcap_                     : 3500 ETH
+* _Softcap_                     : 2500 ETH
 * _Hardcap_                     : 12 000 ETH
 * _Period_                      : 42 days
 * _Start_                       : 

@@ -30,7 +30,7 @@ contract Configurator is Ownable {
     preITO.setStart(1524441600);
     preITO.setPeriod(42);
     preITO.setPrice(6650000000000000000000);
-    preITO.setSoftcap(3500000000000000000000);
+    preITO.setSoftcap(2500000000000000000000);
     preITO.setHardcap(12000000000000000000000);
 
     token.setSaleAgent(preITO);
