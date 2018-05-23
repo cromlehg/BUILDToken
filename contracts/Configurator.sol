@@ -53,6 +53,8 @@ contract Configurator is Ownable {
     ito.addWallet(0x7D648BcAbf05CEf119C9a11b8E05756a41Bd29Ad, 4);
 
     ito.lockAddress(0x3180e7B6E726B23B1d18D9963bDe3264f5107aef,30);
+    ito.lockAddress(0x36A8b67fe7800Cd169Fd46Cd75824DC016a54d13,90);
+    ito.lockAddress(0xDf9CAAE51eED1F23B4ae9AeCDbdeb926252eFFC4,180);
 
     preITO.setNextSaleAgent(ito);
 

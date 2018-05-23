@@ -47,11 +47,11 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ## Tokens distribution
 
-* _Bounty tokens percent_       : 2% - locked untill 30 days after ITO
-* _Advisors tokens percent_     : 3%
-* _Founders tokens percent_     : 11%
-* _Company tokens percent_      : 4%
-* _PreITO + ITO_                : 80%
+* _Bounty tokens percent_       : 2% - locked during 30 days after ITO
+* _Advisors tokens percent_     : 3% - locked during 90 days after ITO
+* _Founders tokens percent_     : 11% - locked during 180 days after ITO  
+* _Company tokens percent_      : 4% 
+* _PreITO + ITO_                : 80% 
 
 ## Main network configuration
 
@@ -93,7 +93,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 2. 15 days, bonus +20%
 3. 15 days, bonus +15%
 4. 15 days, bonus +10%
-5. 30 days, without bonuses
+5. 30 days, bouns +5%
 
 
 ## Ropsten network configuration 
