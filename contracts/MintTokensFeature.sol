@@ -8,4 +8,10 @@ contract MintTokensFeature is MintTokensInterface {
     token.mint(to, tokens);
   }
 
+  function mintTokensBatch(uint amount, address[] to) onlyOwner {
+    for(uint i = 0; i < to.length; i++) {
+      token.mint(to[i], amount);
+    }
+  }
+
 }
