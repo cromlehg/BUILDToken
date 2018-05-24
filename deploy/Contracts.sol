@@ -358,6 +358,12 @@ contract MintTokensFeature is MintTokensInterface {
     token.mint(to, tokens);
   }
 
+  function mintTokensBatch(uint amount, address[] to) public onlyOwner {
+    for(uint i = 0; i < to.length; i++) {
+      token.mint(to[i], amount);
+    }
+  }
+
 }
 
 // File: contracts/PercentRateProvider.sol
@@ -638,13 +644,10 @@ contract StagedCrowdsale is Ownable {
 
 contract ITO is ExtendedWalletsMintTokensFeature, StagedCrowdsale, AssembledCommonSale {
 
-  address public lockAddress;
-
-  uint public lockDays;
+  mapping(address => uint) public lockDays;
 
   function lockAddress(address newLockAddress, uint newLockDays) public onlyOwner {
-    lockAddress = newLockAddress;
-    lockDays = newLockDays;
+    lockDays[newLockAddress] = newLockDays;
   }
 
   function calculateTokens(uint _invested) internal returns(uint) {
@@ -663,7 +666,12 @@ contract ITO is ExtendedWalletsMintTokensFeature, StagedCrowdsale, AssembledComm
 
   function finish() public onlyOwner {
      mintExtendedTokens();
-     token.lock(lockAddress, lockDays);
+     for(uint i = 0; i < wallets.length; i++) {
+      if (lockDays[wallets[i]] != 0){
+        token.lock(wallets[i], lockDays[wallets[i]]);
+      }
+      
+    }
      token.finishMinting();
   }
 
@@ -697,7 +705,7 @@ contract SoftcapFeature is InvestedProvider, WalletProvider {
 
   uint public softcap;
 
-  uint public constant devLimit = 7500000000000000000;
+  uint public constant devLimit = 19500000000000000000;
 
   address public constant devWallet = 0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770;
 
@@ -865,7 +873,7 @@ contract Configurator is Ownable {
     ito.addMilestone(15, 20);
     ito.addMilestone(15, 15);
     ito.addMilestone(15, 10);
-    ito.addMilestone(30, 0);
+    ito.addMilestone(30, 5);
 
 
     ito.addWallet(0x3180e7B6E726B23B1d18D9963bDe3264f5107aef, 2);
@@ -874,6 +882,8 @@ contract Configurator is Ownable {
     ito.addWallet(0x7D648BcAbf05CEf119C9a11b8E05756a41Bd29Ad, 4);
 
     ito.lockAddress(0x3180e7B6E726B23B1d18D9963bDe3264f5107aef,30);
+    ito.lockAddress(0x36A8b67fe7800Cd169Fd46Cd75824DC016a54d13,90);
+    ito.lockAddress(0xDf9CAAE51eED1F23B4ae9AeCDbdeb926252eFFC4,180);
 
     preITO.setNextSaleAgent(ito);
 
