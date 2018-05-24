@@ -32,8 +32,7 @@ export default function (Token, Crowdsale, wallets) {
     await crowdsale.addMilestone(15, 20);
     await crowdsale.addMilestone(15, 15);
     await crowdsale.addMilestone(15, 10);
-    await crowdsale.addMilestone(15, 5);
-    await crowdsale.addMilestone(15, 0);
+    await crowdsale.addMilestone(30, 5);
     await crowdsale.setWallet(this.wallet);
     await crowdsale.addWallet(wallets[3], this.BountyTokensPercent);
     await crowdsale.addWallet(wallets[4], this.AdvisorsTokensPercent);
@@ -41,6 +40,8 @@ export default function (Token, Crowdsale, wallets) {
     await crowdsale.addWallet(wallets[6], this.CompanyTokensPercent);
     await crowdsale.setPercentRate(this.PercentRate);
     await crowdsale.lockAddress(wallets[3], 30);
+    await crowdsale.lockAddress(wallets[4], 90);
+    await crowdsale.lockAddress(wallets[5], 180);
   });
 
   it('should correctly calculate bonuses for bounty, advisors, founders, company wallets', async function () {

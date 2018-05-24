@@ -69,7 +69,7 @@ contract('Configurator integration test', function (accounts) {
 
   it ('preITO should have softcap as described in README', async function () {
     const preitoSoftcap = await preito.softcap();
-    preitoSoftcap.should.bignumber.equal(ether(3500));
+    preitoSoftcap.should.bignumber.equal(ether(2500));
   });
 
   it ('preITO and ITO should have hardcap as described in README', async function () {

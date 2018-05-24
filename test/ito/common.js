@@ -33,8 +33,7 @@ export default function (Token, Crowdsale, wallets) {
     await crowdsale.addMilestone(15, 20);
     await crowdsale.addMilestone(15, 15);
     await crowdsale.addMilestone(15, 10);
-    await crowdsale.addMilestone(15, 5);
-    await crowdsale.addMilestone(15, 0);
+    await crowdsale.addMilestone(30, 5);
     await crowdsale.setWallet(this.wallet);    
     await crowdsale.addWallet(this.BountyTokensWallet, this.BountyTokensPercent);
     await crowdsale.addWallet(this.AdvisorsTokensWallet, this.AdvisorsTokensPercent);    
@@ -42,6 +41,8 @@ export default function (Token, Crowdsale, wallets) {
     await crowdsale.addWallet(this.CompanyTokensWallet, this.CompanyTokensPercent);
     await crowdsale.setPercentRate(this.PercentRate);
     await crowdsale.lockAddress(this.BountyTokensWallet, 30);
+    await crowdsale.lockAddress(this.AdvisorsTokensWallet, 90);
+    await crowdsale.lockAddress(this.FoundersTokensWallet, 180);
   });
 
   it('crowdsale should be a saleAgent for token', async function () {
