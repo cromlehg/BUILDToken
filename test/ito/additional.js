@@ -37,11 +37,11 @@ export default function (Token, Crowdsale, wallets) {
     await crowdsale.addWallet(wallets[9], this.BountyTokensPercent);
     await crowdsale.addWallet(wallets[8], this.AdvisorsTokensPercent);
     await crowdsale.addWallet(wallets[7], this.FoundersTokensPercent);
-    await crowdsale.addWallet(this.CompanyTokensWallet, this.CompanyTokensPercent);
+    await crowdsale.addWallet(wallets[10], this.CompanyTokensPercent);
     await crowdsale.setPercentRate(this.PercentRate);
     await crowdsale.lockAddress(wallets[9], 30);
-    //await crowdsale.lockAddress(wallets[8], 90);
-    //await crowdsale.lockAddress(wallets[7], 180);
+    await crowdsale.lockAddress(wallets[8], 90);
+    await crowdsale.lockAddress(wallets[7], 180);
   });
 
   it('should mintTokensByETHExternal by owner', async function () {
@@ -83,7 +83,7 @@ export default function (Token, Crowdsale, wallets) {
     post.minus(pre).should.bignumber.equal(investment);
   });
 
-  it('should lock bounty wallet address after finish', async function () {
+  it('should lock bounty, advisors, founders wallet address after finish', async function () {
     const owner = await crowdsale.owner();
     const investment = ether(10);
     await crowdsale.sendTransaction({value: investment, from: wallets[1]});
@@ -92,8 +92,9 @@ export default function (Token, Crowdsale, wallets) {
     const balance = await token.balanceOf(wallets[9]);
     balance.should.bignumber.greaterThan(tokens(100));
     await token.transfer(wallets[3], tokens(100), {from: wallets[9]}).should.be.rejectedWith(EVMRevert);
-    //await token.transfer(wallets[3], tokens(100), {from: wallets[8]}).should.be.rejectedWith(EVMRevert);
-    //await token.transfer(wallets[3], tokens(100), {from: wallets[7]}).should.be.rejectedWith(EVMRevert);
+    await token.transfer(wallets[3], tokens(100), {from: wallets[8]}).should.be.rejectedWith(EVMRevert);
+    await token.transfer(wallets[3], tokens(100), {from: wallets[7]}).should.be.rejectedWith(EVMRevert);
+    await token.transfer(wallets[3], tokens(100), {from: wallets[10]}).should.be.fulfilled;
   });
 
   it('should unlock bounty wallet address after 30 days', async function () {
@@ -105,8 +106,37 @@ export default function (Token, Crowdsale, wallets) {
     await token.transfer(wallets[3], tokens(100), {from: wallets[9]}).should.be.fulfilled;
     const balance = await token.balanceOf(wallets[3]);
     balance.should.bignumber.equal(tokens(100));
-    //await token.transfer(wallets[3], tokens(100), {from: wallets[8]}).should.be.rejectedWith(EVMRevert);
-    //await token.transfer(wallets[3], tokens(100), {from: wallets[7]}).should.be.rejectedWith(EVMRevert);
+    await token.transfer(wallets[3], tokens(100), {from: wallets[8]}).should.be.rejectedWith(EVMRevert);
+    await token.transfer(wallets[3], tokens(100), {from: wallets[7]}).should.be.rejectedWith(EVMRevert);
+    await token.transfer(wallets[3], tokens(100), {from: wallets[10]}).should.be.fulfilled;
+  });
+
+  it('should unlock advisors wallet address after 90 days', async function () {
+    const owner = await crowdsale.owner();
+    const investment = ether(10);
+    await crowdsale.sendTransaction({value: investment, from: wallets[1]});
+    await crowdsale.finish({from: owner});
+    await increaseTimeTo(latestTime() + duration.days(91));
+    await token.transfer(wallets[3], tokens(100), {from: wallets[8]}).should.be.fulfilled;
+    const balance = await token.balanceOf(wallets[3]);
+    balance.should.bignumber.equal(tokens(100));
+    await token.transfer(wallets[3], tokens(100), {from: wallets[9]}).should.be.fulfilled;
+    await token.transfer(wallets[3], tokens(100), {from: wallets[7]}).should.be.rejectedWith(EVMRevert);
+    await token.transfer(wallets[3], tokens(100), {from: wallets[10]}).should.be.fulfilled;
+  });
+
+  it('should unlock founders wallet address after 180 days', async function () {
+    const owner = await crowdsale.owner();
+    const investment = ether(10);
+    await crowdsale.sendTransaction({value: investment, from: wallets[1]});
+    await crowdsale.finish({from: owner});
+    await increaseTimeTo(latestTime() + duration.days(181));
+    await token.transfer(wallets[3], tokens(100), {from: wallets[7]}).should.be.fulfilled;
+    const balance = await token.balanceOf(wallets[3]);
+    balance.should.bignumber.equal(tokens(100));
+    await token.transfer(wallets[3], tokens(100), {from: wallets[9]}).should.be.fulfilled;
+    await token.transfer(wallets[3], tokens(100), {from: wallets[8]}).should.be.fulfilled;
+    await token.transfer(wallets[3], tokens(100), {from: wallets[10]}).should.be.fulfilled;
   });
 
   it('should mint tokens batch', async function () {

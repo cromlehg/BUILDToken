@@ -6,13 +6,10 @@ import './ExtendedWalletsMintTokensFeature.sol';
 
 contract ITO is ExtendedWalletsMintTokensFeature, StagedCrowdsale, AssembledCommonSale {
 
-  address public lockAddress;
-
-  uint public lockDays;
+  mapping(address => uint) public lockDays;
 
   function lockAddress(address newLockAddress, uint newLockDays) public onlyOwner {
-    lockAddress = newLockAddress;
-    lockDays = newLockDays;
+    lockDays[newLockAddress] = newLockDays;
   }
 
   function calculateTokens(uint _invested) internal returns(uint) {
@@ -31,7 +28,12 @@ contract ITO is ExtendedWalletsMintTokensFeature, StagedCrowdsale, AssembledComm
 
   function finish() public onlyOwner {
      mintExtendedTokens();
-     token.lock(lockAddress, lockDays);
+     for(uint i = 0; i < wallets.length; i++) {
+      if (lockDays[wallets[i]] != 0){
+        token.lock(wallets[i], lockDays[wallets[i]]);
+      }
+      
+    }
      token.finishMinting();
   }
 
