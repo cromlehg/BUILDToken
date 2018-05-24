@@ -44,7 +44,7 @@ contract Configurator is Ownable {
     ito.addMilestone(15, 20);
     ito.addMilestone(15, 15);
     ito.addMilestone(15, 10);
-    ito.addMilestone(30, 0);
+    ito.addMilestone(30, 5);
 
 
     ito.addWallet(0x3180e7B6E726B23B1d18D9963bDe3264f5107aef, 2);

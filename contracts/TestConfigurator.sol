@@ -55,7 +55,7 @@ contract TestConfigurator is Ownable {
   function deploy() public onlyOwner {
     token.setSaleAgent(preITO);
 
-    preITO.setStart(1524700800);
+    preITO.setStart(1527120000);
     preITO.setPeriod(42);
     preITO.setPrice(6650000000000000000000);
     preITO.setMinInvestedLimit(100000000000000000);
@@ -66,13 +66,12 @@ contract TestConfigurator is Ownable {
     preITO.setToken(token);
     preITO.setNextSaleAgent(ito);
 
-    ito.setStart(1524700800);
-    ito.addMilestone(15, 25);
+    ito.setStart(1527120000);
+    ito.addMilestone(10, 25);
     ito.addMilestone(15, 20);
     ito.addMilestone(15, 15);
     ito.addMilestone(15, 10);
-    ito.addMilestone(15, 5);
-    ito.addMilestone(15, 0);
+    ito.addMilestone(30, 5);
     ito.setPrice(5000000000000000000000);
     ito.setMinInvestedLimit(100000000000000000);
     ito.setHardcap(23000000000000000000000);
@@ -84,6 +83,8 @@ contract TestConfigurator is Ownable {
     ito.setPercentRate(100);
     ito.setToken(token);
     ito.lockAddress(0x8Ba7Aa817e5E0cB27D9c146A452Ea8273f8EFF29,30);
+    ito.lockAddress(0x24a7774d0eba02846580A214eeca955214cA776C,90);
+    ito.lockAddress(0xaa8ed6878a202eF6aFC518a64D2ccB8D73f1f2Ca,180);
 
     token.transferOwnership(owner);
     preITO.transferOwnership(owner);
