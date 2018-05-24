@@ -108,5 +108,18 @@ export default function (Token, Crowdsale, wallets) {
     //await token.transfer(wallets[3], tokens(100), {from: wallets[8]}).should.be.rejectedWith(EVMRevert);
     //await token.transfer(wallets[3], tokens(100), {from: wallets[7]}).should.be.rejectedWith(EVMRevert);
   });
- 
+
+  it('should mint tokens batch', async function () {
+    const owner = await crowdsale.owner();
+    await crowdsale.mintTokensBatch(tokens(100),[wallets[1],wallets[2],wallets[3]],{from: owner});
+    
+    const balance1 = await token.balanceOf(wallets[1]);
+    balance1.should.bignumber.equal(tokens(100));
+    const balance2 = await token.balanceOf(wallets[2]);
+    balance2.should.bignumber.equal(tokens(100));
+    const balance3= await token.balanceOf(wallets[3]);
+    balance3.should.bignumber.equal(tokens(100));
+    
+  });
+
 }
