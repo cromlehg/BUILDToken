@@ -18,9 +18,9 @@ There is a special function to return 3rd party tokens that were sent by mistake
 Each stage has a direct minting function in wei. This is made to support the external payment gateways.
 
 ### Contracts contains
-1. _Token_ - Token contract
-2. _PreITO_ - PreITO contract
-3. _ITO_ - ITO contract
+1. _Token_ 
+2. _Stage 1_
+3. _Stage 2_ 
 4. _Configurator_ - contract with main configuration for production
 
 ### How to manage contract
@@ -47,11 +47,11 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ## Tokens distribution
 
-* _Bounty tokens percent_       : 2% - locked during 30 days after ITO
-* _Advisors tokens percent_     : 3% - locked during 90 days after ITO
-* _Founders tokens percent_     : 11% - locked during 180 days after ITO  
+* _Bounty tokens percent_       : 2% - locked during 30 days after satges
+* _Advisors tokens percent_     : 3% - locked during 90 days after stages
+* _Founders tokens percent_     : 11% - locked during 180 days after stages 
 * _Company tokens percent_      : 4% 
-* _PreITO + ITO_                : 80% 
+* _Satges_                      : 80% 
 
 ## Main network configuration
 
@@ -63,8 +63,8 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ### Links
 1. _Token_ - https://etherscan.io/token/0x9217d91ae8660b5bb8af6d27b2506f40ddf6d414
-2. _PreITO_ - https://etherscan.io/address/0x54b9eaee92a9bff63cd445a65bd19078116fe927
-3. _ITO_ - https://etherscan.io/address/0x6e2d5d2d0dc99ececb27298c411cc0886680ffea
+2. _Stage 1_ - https://etherscan.io/address/0x54b9eaee92a9bff63cd445a65bd19078116fe927
+3. _Stage 2_ - https://etherscan.io/address/0x6e2d5d2d0dc99ececb27298c411cc0886680ffea
 
 ### Features
 * Manually mint tokens by owner or sale agent at any time until token minting finished. 
@@ -72,8 +72,8 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ### Crowdsale stages
 
-#### PreITO
-* _Minimal insvested limit_     : 0.1 ETH
+#### Stage 1
+* _Minimal purchase limit_      : 0.1 ETH
 * _Base price_                  : 1 ETH = 6650 Tokens
 * _Softcap_                     : 2500 ETH
 * _Hardcap_                     : 12 000 ETH
@@ -81,8 +81,8 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Start_                       : 23 Jul 2018 00:00:00 GMT
 * _Wallet_                      : 0xB53E3f252fBCD041e46Aad82CFaEe326E04d1396
 
-#### ITO
-* _Minimal insvested limit_     : 0.1 ETH
+#### Stage 2
+* _Minimal purchase limit_      : 0.1 ETH
 * _Base price_                  : 1 ETH = 5000 Tokens
 * _Hardcap_                     : 23 000 ETH
 * _Start_                       : 10 Sep 2018 00:00:00 GMT
@@ -100,15 +100,15 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ### Links
 1. _Token_ - https://ropsten.etherscan.io/address/0x852cf010172b5bc9206acdd9187faa31de49dd22
-2. _PreITO_ - https://ropsten.etherscan.io/address/0xe7b900450676e91597708bc095d464fbb09f015d
-3. _ITO_ - https://ropsten.etherscan.io/address/0xa3898b742eb0882473b328cda489b1f758278a49
+2. _Stage 1_ - https://ropsten.etherscan.io/address/0xe7b900450676e91597708bc095d464fbb09f015d
+3. _Stage 2_ - https://ropsten.etherscan.io/address/0xa3898b742eb0882473b328cda489b1f758278a49
 
 
 ### Crowdsale stages
 
-#### PreITO
+#### Stage 1
 
-* _Minimal insvested limit_     : 0.1 ETH
+* _Minimal purchase limit_      : 0.1 ETH
 * _Base price_                  : 1 ETH = 6650 Tokens
 * _Softcap_                     : 1.5 ETH
 * _Hardcap_                     : 2 ETH
@@ -135,9 +135,9 @@ https://ropsten.etherscan.io/tx/0xf9006070752d1948fd6b947bca2f66b4ece068d0733b61
 * finish, gas = 47177
 https://ropsten.etherscan.io/tx/0x3df096144ed1defdf746ca5ef1bac8ad595470797c8ca3f16b68c84b9c2a0392
 
-#### ITO
+#### Stage 2
 
-* _Minimal insvested limit_     : 0.1 ETH
+* _Minimal purchase limit_      : 0.1 ETH
 * _Base price_                  : 1 ETH = 5000 Tokens
 * _Hardcap_                     : 23 000 ETH
 * _Start_                       : 26 Apr 2018 00:00:00 GMT
