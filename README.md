@@ -78,7 +78,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Softcap_                     : 2500 ETH
 * _Hardcap_                     : 12 000 ETH
 * _Period_                      : 56 days
-* _Start_                       : 15 Jul 2018 00:00:00 GMT
+* _Start_                       : 23 Jul 2018 00:00:00 GMT
 * _Wallet_                      : 0xB53E3f252fBCD041e46Aad82CFaEe326E04d1396
 
 #### ITO
