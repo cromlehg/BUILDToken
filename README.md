@@ -146,7 +146,7 @@ https://ropsten.etherscan.io/tx/0x3df096144ed1defdf746ca5ef1bac8ad595470797c8ca3
 * _Advisors tokens wallet_      : 0x24a7774d0eba02846580A214eeca955214cA776C
 * _Founders tokens wallet_      : 0xaa8ed6878a202eF6aFC518a64D2ccB8D73f1f2Ca
 * _Company tokens wallet_       : 0x470a2D1105EaE6aAe879623357F615Ab9cbf906E
-* _Bounty tokens percent_       : 2% (locked untill 30 days after ITO)
+* _Bounty tokens percent_       : 2% (locked untill 30 days after all stages)
 * _Advisors tokens percent_     : 3%
 * _Founders tokens percent_     : 11%
 * _Company tokens percent_      : 4%
