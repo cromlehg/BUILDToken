@@ -865,7 +865,7 @@ contract Configurator is Ownable {
     token.setSaleAgent(preITO);
 
     ito.setWallet(0x8f1C4E049907Fa4329dAC9c504f4013620Fa39c9);
-    ito.setStart(1535155200); // 25 Aug 2018 00:00:00 GMT
+    ito.setStart(1537142400); // 17 Sep 2018 00:00:00 GMT
     ito.setHardcap(23000000000000000000000);
     ito.setPrice(5000000000000000000000);
 

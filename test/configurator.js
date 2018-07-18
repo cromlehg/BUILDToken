@@ -55,9 +55,9 @@ contract('Configurator integration test', function (accounts) {
 
   it('preITO and ITO should have start time as described in README', async function () {
     const preitoStart = await preito.start();
-    preitoStart.should.bignumber.equal((new Date('07 Jul 2018 00:00:00 GMT')).getTime() / 1000);
+    preitoStart.should.bignumber.equal((new Date('23 Jul 2018 00:00:00 GMT')).getTime() / 1000);
     const itoStart = await ito.start();
-    itoStart.should.bignumber.equal((new Date('25 Aug 2018 00:00:00 GMT')).getTime() / 1000);
+    itoStart.should.bignumber.equal((new Date('17 Sep 2018 00:00:00 GMT')).getTime() / 1000);
   });
 
   it ('preTCO and ITO should have price as described in README', async function () {
