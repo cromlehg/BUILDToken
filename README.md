@@ -51,7 +51,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Advisors tokens percent_     : 3% - locked during 90 days after stages
 * _Founders tokens percent_     : 11% - locked during 180 days after stages 
 * _Company tokens percent_      : 4% 
-* _Satges_                      : 80% 
+* _Stages_                      : 80% 
 
 ## Main network configuration
 
